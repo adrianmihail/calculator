@@ -1,4 +1,6 @@
 let inputNumbers = [];
+let operator = '';
+
 
 const nrSeven = document.querySelector('#seven');
 nrSeven.addEventListener('click', () => {
@@ -70,32 +72,58 @@ nrZero.addEventListener('click', () => {
     console.log(inputNumbers);
 });
 
-console.log(inputNumbers);
-
-
-/* Other Buttons
-
-*** MAKE DENOMINATOR + - * % with splice in order to separate the numbers *****
-
-const dot = document.querySelector('#seven');
-nrSeven.addEventListener('click', () => {
-    const value = 7;
+const add = document.querySelector('#add');
+add.addEventListener('click', () => {
+    const value = '+';
+    operator = '+';
     inputNumbers.push(value);
     console.log(inputNumbers);
 });
 
-const clear = document.querySelector('#seven');
-nrSeven.addEventListener('click', () => {
-    const value = 7;
+const subtract = document.querySelector('#subtract');
+subtract.addEventListener('click', () => {
+    const value = '-';
+    operator = '-';
     inputNumbers.push(value);
     console.log(inputNumbers);
 });
 
-const result = document.querySelector('#seven');
-nrSeven.addEventListener('click', () => {
-    const value = 7;
+const multiply = document.querySelector('#multiply');
+multiply.addEventListener('click', () => {
+    const value = '*';
+    operator = '*';
     inputNumbers.push(value);
     console.log(inputNumbers);
 });
 
-*/
+const divide = document.querySelector('#divide');
+divide.addEventListener('click', () => {
+    const value = '/';
+    operator = '/';
+    inputNumbers.push(value);
+    console.log(inputNumbers);
+});
+
+//*** MAKE DENOMINATOR + - * % with splice in order to separate the numbers *****
+
+const dot = document.querySelector('#dot');
+dot.addEventListener('click', () => {
+    const value = '.';
+    inputNumbers.push(value);
+    console.log(inputNumbers);
+});
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
+    inputNumbers = [];
+    console.log(inputNumbers);
+});
+
+const result = document.querySelector('#result');
+result.addEventListener('click', () => {
+    
+});
+
+let deleteThis = '';
+console.log(deleteThis = inputNumbers.indexOf(operator));
+console.log(inputNumbers.splice(deleteThis, 1));

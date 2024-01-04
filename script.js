@@ -104,8 +104,6 @@ divide.addEventListener('click', () => {
     console.log(inputNumbers);
 });
 
-//*** MAKE DENOMINATOR + - * % with splice in order to separate the numbers *****
-
 const dot = document.querySelector('#dot');
 dot.addEventListener('click', () => {
     const value = '.';
@@ -122,12 +120,13 @@ clear.addEventListener('click', () => {
 const result = document.querySelector('#result');
 result.addEventListener('click', () => {
     let operatorUsed = inputNumbers.indexOf(operator);
-    console.log(operatorUsed);
 
     let firstNumber = inputNumbers.splice(0, operatorUsed);
+    firstNumber = firstNumber.join('');
     console.log(firstNumber);
 
-    let secondNumber = inputNumbers.splice(operatorUsed, inputNumbers.length);
+    let secondNumber = inputNumbers.splice(1, inputNumbers.length);
+    secondNumber = secondNumber.join('');
     console.log(secondNumber);
 
     let result = 0;
@@ -146,11 +145,16 @@ result.addEventListener('click', () => {
 
         case '/':
             result = Number(firstNumber) / Number(secondNumber);
+        break;
         
         default:
             result = 'No operator introduced. Please clear and try again.';
     };
 
     inputNumbers = [result];
+
+    const resultDisplay = document.querySelector('#text');
+    resultDisplay.textContent = inputNumbers.toString();
+
     return console.log(inputNumbers);
 });

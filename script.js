@@ -151,6 +151,6 @@ result.addEventListener('click', () => {
             result = 'No operator introduced. Please clear and try again.';
     };
 
-    return console.log(result);
-    
+    inputNumbers = [result];
+    return console.log(inputNumbers);
 });

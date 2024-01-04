@@ -121,9 +121,36 @@ clear.addEventListener('click', () => {
 
 const result = document.querySelector('#result');
 result.addEventListener('click', () => {
+    let operatorUsed = inputNumbers.indexOf(operator);
+    console.log(operatorUsed);
+
+    let firstNumber = inputNumbers.splice(0, operatorUsed);
+    console.log(firstNumber);
+
+    let secondNumber = inputNumbers.splice(operatorUsed, inputNumbers.length);
+    console.log(secondNumber);
+
+    let result = 0;
+    switch(operator) {
+        case '+':
+            result = Number(firstNumber) + Number(secondNumber);
+        break;
+        
+        case '-':
+            result = Number(firstNumber) - Number(secondNumber);
+        break;
+        
+        case '*':
+            result = Number(firstNumber) * Number(secondNumber);
+        break;
+
+        case '/':
+            result = Number(firstNumber) / Number(secondNumber);
+        
+        default:
+            result = 'No operator introduced. Please clear and try again.';
+    };
+
+    return console.log(result);
     
 });
-
-let deleteThis = '';
-console.log(deleteThis = inputNumbers.indexOf(operator));
-console.log(inputNumbers.splice(deleteThis, 1));
